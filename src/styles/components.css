@@ -1,0 +1,6 @@
+/* Índice de estilos de componentes y páginas de SEPARA */
+@import './components/layout.css';
+@import './components/common.css';
+@import './components/recycling.css';
+@import './components/identification.css';
+@import './components/pages.css';

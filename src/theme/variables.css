@@ -1,2 +1,42 @@
-/* For information on how to create your own theme, please refer to:
-http://ionicframework.com/docs/theming/ */
+/* Ajustes de las variables de Ionic basados en los tokens de SEPARA
+   Más información: http://ionicframework.com/docs/theming/ */
+
+:root {
+  --ion-font-family: var(--separa-font);
+
+  --ion-background-color: var(--separa-bg);
+  --ion-background-color-rgb: 248, 247, 255;
+  --ion-text-color: var(--separa-text);
+  --ion-text-color-rgb: 24, 34, 53;
+  --ion-border-color: var(--separa-border);
+  --ion-item-background: var(--separa-card);
+  --ion-toolbar-background: var(--separa-card);
+  --ion-toolbar-color: var(--separa-text);
+  --ion-tab-bar-background: var(--separa-card);
+  --ion-tab-bar-color: #7b8590;
+  --ion-tab-bar-color-selected: var(--separa-green);
+
+  /* Primary */
+  --ion-color-primary: #007653;
+  --ion-color-primary-rgb: 0, 118, 83;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #006849;
+  --ion-color-primary-tint: #1a8464;
+
+  /* Secondary (lila suave) */
+  --ion-color-secondary: #eef0ff;
+  --ion-color-secondary-rgb: 238, 240, 255;
+  --ion-color-secondary-contrast: #182235;
+  --ion-color-secondary-contrast-rgb: 24, 34, 53;
+  --ion-color-secondary-shade: #d1d3e0;
+  --ion-color-secondary-tint: #f0f2ff;
+
+  /* Success (verde claro) */
+  --ion-color-success: #ddf7ec;
+  --ion-color-success-rgb: 221, 247, 236;
+  --ion-color-success-contrast: #005e43;
+  --ion-color-success-contrast-rgb: 0, 94, 67;
+  --ion-color-success-shade: #c2d992;
+  --ion-color-success-tint: #e1f8ef;
+}

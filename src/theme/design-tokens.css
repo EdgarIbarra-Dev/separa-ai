@@ -1,0 +1,60 @@
+/* Tokens de diseño de SEPARA: única fuente de verdad de colores, radios, sombras y espaciados */
+:root {
+  /* Marca */
+  --separa-green: #007653;
+  --separa-green-dark: #005e43;
+  --separa-green-light: #ddf7ec;
+  --separa-mint: #79ebc0;
+
+  /* Superficies */
+  --separa-bg: #f8f7ff;
+  --separa-card: #ffffff;
+  --separa-lilac: #eef0ff;
+  --separa-border: #e9eaf3;
+
+  /* Texto */
+  --separa-text: #182235;
+  --separa-text-secondary: #59636b;
+
+  /* Recipientes (Resolución 2184 de 2019) */
+  --separa-bin-white: #f4f5fa;
+  --separa-bin-white-border: #d9dcea;
+  --separa-bin-green: #007653;
+  --separa-bin-black: #272d3f;
+
+  /* Estados */
+  --separa-warm: #fff6ec;
+  --separa-warm-border: #fbe6cc;
+  --separa-amber: #8a5a14;
+  --separa-danger: #c0392b;
+  --separa-danger-bg: #fdecea;
+
+  /* Radios */
+  --separa-radius-xs: 8px;
+  --separa-radius-sm: 12px;
+  --separa-radius-md: 16px;
+  --separa-radius-lg: 20px;
+  --separa-radius-xl: 28px;
+  --separa-radius-pill: 999px;
+
+  /* Sombras muy suaves */
+  --separa-shadow-sm: 0 1px 3px rgba(24, 34, 53, 0.05);
+  --separa-shadow-md: 0 4px 16px rgba(24, 34, 53, 0.06);
+  --separa-shadow-green: 0 8px 20px rgba(0, 118, 83, 0.22);
+
+  /* Espaciado */
+  --separa-space-1: 4px;
+  --separa-space-2: 8px;
+  --separa-space-3: 12px;
+  --separa-space-4: 16px;
+  --separa-space-5: 20px;
+  --separa-space-6: 24px;
+  --separa-space-8: 32px;
+
+  /* Tipografía */
+  --separa-font: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Alturas */
+  --separa-tabbar-height: 64px;
+  --separa-touch-target: 52px;
+}

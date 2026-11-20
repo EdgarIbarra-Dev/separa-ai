@@ -1,0 +1,85 @@
+/* Cabeceras y barra inferior */
+
+.app-header ion-toolbar,
+.page-header ion-toolbar {
+  --background: var(--separa-card);
+  --min-height: 60px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: env(safe-area-inset-top);
+  box-shadow: var(--separa-shadow-sm);
+}
+
+.app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--separa-green);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.page-header ion-toolbar {
+  --padding-start: 6px;
+}
+
+.page-header__back {
+  --color: var(--separa-text);
+  --icon-font-size: 24px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.page-header__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--separa-green);
+}
+
+.page-header__title h1 {
+  color: var(--separa-text);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Barra inferior */
+.app-tab-bar {
+  background: var(--separa-card);
+  border-top: 1px solid var(--separa-border);
+}
+
+.app-tab-bar__nav {
+  display: flex;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+}
+
+.app-tab-bar__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 52px;
+  background: none;
+  border: 0;
+  border-radius: var(--separa-radius-md);
+  color: #6c7580;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-tab-bar__item ion-icon {
+  font-size: 24px;
+}
+
+.app-tab-bar__item--active {
+  color: var(--separa-green);
+  font-weight: 700;
+}

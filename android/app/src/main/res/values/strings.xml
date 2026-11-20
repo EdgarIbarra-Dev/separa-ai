@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SEPARA</string>
+    <string name="title_activity_main">SEPARA</string>
+    <string name="package_name">com.separa.app</string>
+    <string name="custom_url_scheme">com.separa.app</string>
+</resources>

@@ -1,0 +1,449 @@
+/* Cámara simulada, permiso de cámara, consejos y ejemplos de captura */
+
+/* ---------- Cámara simulada ---------- */
+.camera {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 460px;
+  border-radius: var(--separa-radius-xl);
+  background: #000000;
+  box-shadow: var(--separa-shadow-md);
+  overflow: hidden;
+  user-select: none;
+}
+
+.camera__scene {
+  position: absolute;
+  inset: 36px 12px 100px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+}
+
+.camera__grid {
+  position: absolute;
+  inset: 36px 12px 100px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
+  background-size: 33.333% 33.333%;
+  pointer-events: none;
+}
+
+.camera__top {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+}
+
+.camera__sensor {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--separa-radius-pill);
+  background: rgba(24, 34, 53, 0.78);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.camera__sensor-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--separa-mint);
+}
+
+.camera__corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 0 solid var(--separa-mint);
+}
+
+.camera__corner--tl {
+  top: 46px;
+  left: 20px;
+  border-top-width: 4px;
+  border-left-width: 4px;
+  border-top-left-radius: 10px;
+}
+
+.camera__corner--tr {
+  top: 46px;
+  right: 20px;
+  border-top-width: 4px;
+  border-right-width: 4px;
+  border-top-right-radius: 10px;
+}
+
+.camera__corner--bl {
+  bottom: 114px;
+  left: 20px;
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+  border-bottom-left-radius: 10px;
+}
+
+.camera__corner--br {
+  right: 20px;
+  bottom: 114px;
+  border-right-width: 4px;
+  border-bottom-width: 4px;
+  border-bottom-right-radius: 10px;
+}
+
+.camera__focus {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border: 2px solid rgba(121, 235, 192, 0.85);
+  border-radius: 50%;
+  transform: translate(-50%, -62%);
+}
+
+.camera__focus-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--separa-mint);
+}
+
+.camera__zoom {
+  position: absolute;
+  bottom: 124px;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  transform: translateX(-50%);
+}
+
+.camera__bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 16px 14px;
+}
+
+.camera__modes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.camera__mode {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.camera__mode--active {
+  color: #f5c542;
+}
+
+.camera__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.camera__flash,
+.camera__flip {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.camera__flash {
+  background: #f1f1f4;
+  color: var(--separa-text);
+}
+
+.camera__flip {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.camera__shutter {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+}
+
+.camera__shutter span {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* ---------- Permiso de cámara ---------- */
+.permission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.permission__halo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #eef0ff 55%, #e1e4fc 100%);
+}
+
+.permission__camera {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: var(--separa-shadow-md);
+  color: var(--separa-green);
+  font-size: 44px;
+}
+
+.permission__orb {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.permission__orb--leaf {
+  top: 14px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  background: var(--separa-mint);
+  color: var(--separa-green-dark);
+  font-size: 18px;
+}
+
+.permission__orb--lock {
+  right: 26px;
+  bottom: 20px;
+  width: 42px;
+  height: 42px;
+  background: var(--separa-green);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.permission__orb--shield {
+  bottom: 26px;
+  left: 14px;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  box-shadow: var(--separa-shadow-sm);
+  color: var(--separa-green);
+  font-size: 16px;
+}
+
+.permission__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--separa-amber);
+}
+
+.permission__title {
+  max-width: 280px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.permission__description {
+  max-width: 320px;
+  color: var(--separa-text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.permission__privacy {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--separa-radius-lg);
+  background: var(--separa-lilac);
+  text-align: left;
+}
+
+.permission__privacy h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.permission__privacy p {
+  margin-top: 4px;
+  color: var(--separa-text-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.permission__features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.permission__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: var(--separa-radius-md);
+  background: var(--separa-card);
+  box-shadow: var(--separa-shadow-sm);
+  text-align: left;
+}
+
+.permission__feature h4 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.permission__feature p {
+  color: var(--separa-text-secondary);
+  font-size: 12px;
+}
+
+/* ---------- Consejos y ejemplos ---------- */
+.tips {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--separa-radius-lg);
+  background: var(--separa-lilac);
+  text-align: left;
+}
+
+.tips__title {
+  margin-bottom: 12px;
+}
+
+.tips__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tips__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--separa-radius-md);
+  background: var(--separa-card);
+}
+
+.tips__item h4 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tips__item p {
+  margin-top: 2px;
+  color: var(--separa-text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.capture-examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.capture-example {
+  margin: 0;
+  padding: 8px;
+  border-radius: var(--separa-radius-md);
+  background: var(--separa-card);
+  box-shadow: var(--separa-shadow-md);
+}
+
+.capture-example__image {
+  position: relative;
+  height: 110px;
+  border-radius: var(--separa-radius-sm);
+  overflow: hidden;
+}
+
+.capture-example__tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 8px;
+  border-radius: var(--separa-radius-pill);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.capture-example__tag--ideal {
+  background: var(--separa-green);
+}
+
+.capture-example__tag--avoid {
+  background: var(--separa-danger);
+}
+
+.capture-example figcaption {
+  margin-top: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-align: center;
+}

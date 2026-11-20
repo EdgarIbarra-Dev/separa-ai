@@ -1,0 +1,456 @@
+/* Componentes comunes: botones, tarjetas, badges, chips, estados vacíos */
+
+/* ---------- Ilustraciones ---------- */
+.illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.illustration svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.recycle-logo {
+  flex: none;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  --border-radius: var(--separa-radius-md);
+  --box-shadow: none;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  height: var(--separa-touch-target);
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.btn ion-icon {
+  font-size: 20px;
+}
+
+.btn--primary {
+  --background: var(--separa-green);
+  --background-activated: var(--separa-green-dark);
+  --background-hover: var(--separa-green-dark);
+  --background-focused: var(--separa-green-dark);
+  --color: #ffffff;
+  --box-shadow: var(--separa-shadow-green);
+}
+
+.btn--soft {
+  --background: var(--separa-lilac);
+  --background-activated: #e0e3fb;
+  --background-hover: #e0e3fb;
+  --color: var(--separa-text);
+}
+
+.btn--text {
+  --background: transparent;
+  --background-activated: var(--separa-lilac);
+  --background-hover: var(--separa-lilac);
+  --color: var(--separa-text-secondary);
+  height: 44px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn--compact {
+  --background: var(--separa-lilac);
+  --background-activated: #e0e3fb;
+  --color: var(--separa-green);
+  --border-radius: 14px;
+  height: 40px;
+  font-size: 13px;
+}
+
+/* ---------- Iconos con contenedor ---------- */
+.icon-container {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container--sm {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.icon-container--md {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+.icon-container--lg {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 24px;
+}
+
+.icon-container--xl {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  font-size: 30px;
+}
+
+.icon-container--lilac {
+  background: var(--separa-lilac);
+  color: var(--separa-green);
+}
+
+.icon-container--mint {
+  background: var(--separa-mint);
+  color: var(--separa-green-dark);
+}
+
+.icon-container--green {
+  background: var(--separa-green);
+  color: #ffffff;
+}
+
+.icon-container--white {
+  background: #ffffff;
+  color: var(--separa-green);
+}
+
+.icon-container--dark {
+  background: var(--separa-bin-black);
+  color: #ffffff;
+}
+
+.icon-container--amber {
+  background: #ffe9d1;
+  color: var(--separa-amber);
+}
+
+.icon-container--blue {
+  background: #e4ebff;
+  color: #3558c7;
+}
+
+/* ---------- Badges ---------- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  --padding-top: 4px;
+  --padding-bottom: 4px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border-radius: var(--separa-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.status-badge ion-icon {
+  font-size: 13px;
+}
+
+.status-badge--upper {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-badge--green {
+  --background: var(--separa-green-light);
+  --color: var(--separa-green);
+}
+
+.status-badge--mint {
+  --background: #b5f2da;
+  --color: #004d37;
+}
+
+.status-badge--blue {
+  --background: #e4ebff;
+  --color: #3558c7;
+}
+
+.status-badge--orange {
+  --background: #fff0dc;
+  --color: #9a5b0d;
+}
+
+.status-badge--neutral {
+  --background: #eceef7;
+  --color: #4a5360;
+}
+
+.status-badge--dark {
+  --background: var(--separa-bin-black);
+  --color: #ffffff;
+}
+
+/* ---------- Títulos de sección ---------- */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.section-title h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-title__tag {
+  color: var(--separa-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Tarjeta informativa ---------- */
+.info-card {
+  --background: var(--separa-card);
+  --color: var(--separa-text);
+  position: relative;
+  margin: 0;
+  border-radius: var(--separa-radius-lg);
+  box-shadow: var(--separa-shadow-md);
+  overflow: hidden;
+  text-align: left;
+}
+
+.info-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.info-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.info-card__description {
+  margin-top: 2px;
+  color: var(--separa-text-secondary);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-card__trailing {
+  flex: none;
+  color: #6c7580;
+  font-size: 20px;
+}
+
+.info-card--primary {
+  --background: var(--separa-green);
+  --color: #ffffff;
+  box-shadow: var(--separa-shadow-green);
+}
+
+.info-card--primary::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: -36px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.info-card--primary .info-card__content {
+  padding: 20px 16px;
+}
+
+.info-card--primary .info-card__description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.info-card--primary .info-card__trailing {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.info-card--mint {
+  --background: var(--separa-green-light);
+  border: 1px solid #bfeedb;
+  box-shadow: none;
+}
+
+.info-card--mint .info-card__title {
+  color: var(--separa-green-dark);
+}
+
+.info-card--mint .info-card__description {
+  color: #2d6a58;
+}
+
+.info-card--soft {
+  --background: var(--separa-lilac);
+  box-shadow: none;
+}
+
+.info-card--stacked .info-card__content {
+  align-items: flex-start;
+}
+
+.info-card__action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* ---------- Nota con icono ---------- */
+.inline-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--separa-radius-md);
+  background: var(--separa-lilac);
+}
+
+.inline-note ion-icon {
+  flex: none;
+  margin-top: 1px;
+  color: var(--separa-green);
+  font-size: 20px;
+}
+
+.inline-note p {
+  color: var(--separa-text-secondary);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.inline-note--green {
+  background: var(--separa-green-light);
+}
+
+/* ---------- Chips de filtro ---------- */
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  margin: 0 calc(var(--separa-space-4) * -1);
+  padding: 2px var(--separa-space-4);
+  overflow-x: auto;
+}
+
+.filter-chip {
+  --background: var(--separa-lilac);
+  --color: var(--separa-text-secondary);
+  flex: none;
+  min-height: 36px;
+  margin: 0;
+  padding: 0 14px;
+  border-radius: var(--separa-radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filter-chip--active {
+  --background: var(--separa-green);
+  --color: #ffffff;
+}
+
+/* ---------- Estado vacío ---------- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 20px;
+  border-radius: var(--separa-radius-xl);
+  background: #f1f1ff;
+  text-align: center;
+}
+
+.empty-state__title {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.empty-state__description {
+  max-width: 300px;
+  color: var(--separa-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.empty-state .btn {
+  margin-top: 8px;
+}
+
+/* ---------- Banner con imagen ---------- */
+.image-banner {
+  position: relative;
+  height: 150px;
+  border-radius: var(--separa-radius-lg);
+  box-shadow: var(--separa-shadow-md);
+  overflow: hidden;
+}
+
+.image-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 34, 53, 0.65), transparent 55%);
+  pointer-events: none;
+}
+
+.image-banner__tag {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.image-banner__tag ion-icon {
+  font-size: 16px;
+}
+
+/* Estado de acción completada (botón "Guardado") */
+.btn--done {
+  --background: var(--separa-green-light);
+  --color: var(--separa-green);
+  --box-shadow: none;
+}
+
+.btn--done.button-disabled {
+  opacity: 1;
+}
