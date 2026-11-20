@@ -38,4 +38,9 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Cámara: permiso en tiempo de ejecución. La galería usa el selector nativo y no requiere permisos de almacenamiento. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- La cámara es opcional: sin ella la app se instala y sigue permitiendo elegir imágenes de la galería -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
 </manifest>

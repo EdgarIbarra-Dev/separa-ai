@@ -23,6 +23,7 @@ import ContainerInstructionCard from '../components/recycling/ContainerInstructi
 import RecommendationItem from '../components/recycling/RecommendationItem';
 import { containerInfo } from '../data/containers';
 import { useClassification } from '../hooks/useClassification';
+import { useImageCapture } from '../hooks/useImageCapture';
 import { useSaveClassification } from '../hooks/useSaveClassification';
 import { getCategoryInfo, getWasteById, resolveRecommendations } from '../services/catalogService';
 import type { ClassificationSession } from '../types/classification';
@@ -96,6 +97,7 @@ const AnalysisResultPage: React.FC = () => {
   const router = useIonRouter();
   const { classification, startNewClassification } = useClassification();
   const { isSaved, isSaving, save } = useSaveClassification(classification);
+  const { clearImage } = useImageCapture();
   const resetOnLeave = useRef(false);
 
   // La clasificación se descarta cuando la pantalla ya salió de vista, para evitar parpadeos durante la transición
@@ -137,6 +139,7 @@ const AnalysisResultPage: React.FC = () => {
 
   const handleIdentifyAnother = () => {
     resetOnLeave.current = true;
+    clearImage();
     router.push('/identificar');
   };
 

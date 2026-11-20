@@ -7,6 +7,7 @@ interface SecondaryButtonProps {
   endIcon?: string;
   to?: string;
   onClick?: () => void;
+  disabled?: boolean;
   /** soft: fondo lila · text: acción terciaria sin fondo · compact: pequeño con fondo lila */
   variant?: 'soft' | 'text' | 'compact';
 }
@@ -17,6 +18,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   endIcon,
   to,
   onClick,
+  disabled = false,
   variant = 'soft',
 }) => (
   <IonButton
@@ -24,6 +26,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
     expand={variant === 'soft' || variant === 'text' ? 'block' : undefined}
     routerLink={to}
     onClick={onClick}
+    disabled={disabled}
   >
     {icon ? <IonIcon slot="start" icon={icon} aria-hidden="true" /> : null}
     {children}

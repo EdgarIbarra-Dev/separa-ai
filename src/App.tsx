@@ -4,6 +4,7 @@ import { Navigate, Route } from 'react-router-dom';
 
 import { ClassificationProvider } from './context/ClassificationProvider';
 import { HistoryProvider } from './context/HistoryProvider';
+import { ImageCaptureProvider } from './context/ImageCaptureProvider';
 import AnalysisResultPage from './pages/AnalysisResultPage';
 import CameraPermissionPage from './pages/CameraPermissionPage';
 import HistoryPage from './pages/HistoryPage';
@@ -42,21 +43,23 @@ const App: React.FC = () => (
   <IonApp>
     <ClassificationProvider>
       <HistoryProvider>
-        <IonReactRouter>
-          <IonRouterOutlet>
-            <Route path="/inicio" element={<HomePage />} />
-            <Route path="/identificar" element={<IdentifyWastePage />} />
-            <Route path="/permiso-camara" element={<CameraPermissionPage />} />
-            <Route path="/resultado" element={<AnalysisResultPage />} />
-            <Route path="/no-identificado" element={<NotIdentifiedPage />} />
-            <Route path="/seleccion-manual" element={<ManualSelectionPage />} />
-            <Route path="/guia" element={<RecyclingGuidePage />} />
-            <Route path="/historial" element={<HistoryPage />} />
-            <Route path="/historial-vacio" element={<Navigate to="/historial" replace />} />
-            <Route path="/" element={<Navigate to="/inicio" replace />} />
-            <Route path="*" element={<Navigate to="/inicio" replace />} />
-          </IonRouterOutlet>
-        </IonReactRouter>
+        <ImageCaptureProvider>
+          <IonReactRouter>
+            <IonRouterOutlet>
+              <Route path="/inicio" element={<HomePage />} />
+              <Route path="/identificar" element={<IdentifyWastePage />} />
+              <Route path="/permiso-camara" element={<CameraPermissionPage />} />
+              <Route path="/resultado" element={<AnalysisResultPage />} />
+              <Route path="/no-identificado" element={<NotIdentifiedPage />} />
+              <Route path="/seleccion-manual" element={<ManualSelectionPage />} />
+              <Route path="/guia" element={<RecyclingGuidePage />} />
+              <Route path="/historial" element={<HistoryPage />} />
+              <Route path="/historial-vacio" element={<Navigate to="/historial" replace />} />
+              <Route path="/" element={<Navigate to="/inicio" replace />} />
+              <Route path="*" element={<Navigate to="/inicio" replace />} />
+            </IonRouterOutlet>
+          </IonReactRouter>
+        </ImageCaptureProvider>
       </HistoryProvider>
     </ClassificationProvider>
   </IonApp>

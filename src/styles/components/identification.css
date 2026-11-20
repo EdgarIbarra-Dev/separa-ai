@@ -15,7 +15,7 @@
 
 .camera__scene {
   position: absolute;
-  inset: 36px 12px 100px;
+  inset: 12px 12px 88px;
   width: auto;
   height: auto;
   border-radius: 6px;
@@ -23,7 +23,7 @@
 
 .camera__grid {
   position: absolute;
-  inset: 36px 12px 100px;
+  inset: 12px 12px 88px;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px);
@@ -31,20 +31,9 @@
   pointer-events: none;
 }
 
-.camera__top {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-around;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 16px;
-}
-
 .camera__sensor {
   position: absolute;
-  top: 46px;
+  top: 22px;
   left: 50%;
   display: flex;
   align-items: center;
@@ -76,7 +65,7 @@
 }
 
 .camera__corner--tl {
-  top: 46px;
+  top: 22px;
   left: 20px;
   border-top-width: 4px;
   border-left-width: 4px;
@@ -84,7 +73,7 @@
 }
 
 .camera__corner--tr {
-  top: 46px;
+  top: 22px;
   right: 20px;
   border-top-width: 4px;
   border-right-width: 4px;
@@ -92,7 +81,7 @@
 }
 
 .camera__corner--bl {
-  bottom: 114px;
+  bottom: 100px;
   left: 20px;
   border-bottom-width: 4px;
   border-left-width: 4px;
@@ -101,7 +90,7 @@
 
 .camera__corner--br {
   right: 20px;
-  bottom: 114px;
+  bottom: 100px;
   border-right-width: 4px;
   border-bottom-width: 4px;
   border-bottom-right-radius: 10px;
@@ -127,22 +116,6 @@
   background: var(--separa-mint);
 }
 
-.camera__zoom {
-  position: absolute;
-  bottom: 124px;
-  left: 50%;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
-  transform: translateX(-50%);
-}
-
 .camera__bottom {
   position: absolute;
   right: 0;
@@ -150,52 +123,29 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 8px 16px 14px;
-}
-
-.camera__modes {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
-.camera__mode {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.camera__mode--active {
-  color: #f5c542;
+  padding: 8px 16px 12px;
 }
 
 .camera__controls {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.camera__flash,
 .camera__flip {
+  position: absolute;
+  top: 50%;
+  right: 0;
   display: grid;
   place-items: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  font-size: 22px;
-}
-
-.camera__flash {
-  background: #f1f1f4;
-  color: var(--separa-text);
-}
-
-.camera__flip {
   background: rgba(255, 255, 255, 0.16);
   color: #ffffff;
+  font-size: 22px;
+  transform: translateY(-50%);
 }
 
 .camera__shutter {
@@ -446,4 +396,83 @@
   font-size: 11.5px;
   font-weight: 600;
   text-align: center;
+}
+
+/* ---------- Vista previa de la fotografía adquirida ---------- */
+.image-preview__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-preview__tag,
+.image-preview__discard {
+  position: absolute;
+  top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--separa-radius-pill);
+  background: rgba(24, 34, 53, 0.78);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.image-preview__tag {
+  left: 12px;
+}
+
+.image-preview__discard {
+  right: 12px;
+  cursor: pointer;
+}
+
+.image-preview__discard:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.image-preview__discard:focus-visible {
+  outline: 2px solid var(--separa-mint);
+  outline-offset: 2px;
+}
+
+/* ---------- Cámara en vivo ---------- */
+.camera__video {
+  width: calc(100% - 24px);
+  height: calc(100% - 100px);
+  background: #000000;
+  object-fit: cover;
+}
+
+button.camera__shutter,
+button.camera__flip {
+  padding: 0;
+  cursor: pointer;
+}
+
+button.camera__shutter {
+  background: transparent;
+}
+
+button.camera__flip {
+  border: 0;
+}
+
+button.camera__shutter:disabled,
+button.camera__flip:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button.camera__shutter:focus-visible,
+button.camera__flip:focus-visible {
+  outline: 2px solid var(--separa-mint);
+  outline-offset: 3px;
 }

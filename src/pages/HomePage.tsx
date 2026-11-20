@@ -1,4 +1,4 @@
-import { IonPage } from '@ionic/react';
+import { IonPage, useIonRouter } from '@ionic/react';
 import {
   arrowForward,
   cameraOutline,
@@ -18,9 +18,18 @@ import AppHeader from '../components/layout/AppHeader';
 import AppTabBar from '../components/layout/AppTabBar';
 import PageContainer from '../components/layout/PageContainer';
 import { useClassification } from '../hooks/useClassification';
+import { useImageCapture } from '../hooks/useImageCapture';
 
 const HomePage: React.FC = () => {
+  const router = useIonRouter();
   const { startNewClassification } = useClassification();
+  const { openGallery } = useImageCapture();
+
+  // La galería abre directamente el selector; solo si se elige una imagen se pasa a revisarla en Identificar
+  const handleGallery = async (): Promise<void> => {
+    const outcome = await openGallery();
+    if (outcome === 'captured') router.push('/identificar');
+  };
 
   return (
     <IonPage>
@@ -46,7 +55,7 @@ const HomePage: React.FC = () => {
           icon={imagesOutline}
           title="Elegir de galería"
           description="Sube una foto guardada"
-          to="/identificar"
+          onClick={() => void handleGallery()}
         />
         <InfoCard
           icon={listOutline}
