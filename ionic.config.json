@@ -1,0 +1,7 @@
+{
+  "name": "separa-ia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
